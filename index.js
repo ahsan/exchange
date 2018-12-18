@@ -17,4 +17,7 @@ require('./config/server')(app);
 // apply express configuration
 require('./config/express')(app);
 
+// load rates
+require('./rates/rates').loadRates();
+
 module.exports = app;
