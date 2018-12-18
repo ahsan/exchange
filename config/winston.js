@@ -13,7 +13,7 @@ const logDirectory = process.env.LOGS_DIR || 'logs';
 if (!fs.existsSync(logDirectory)) {
   fs.mkdirSync(logDirectory);
 }
-const logs = path.join(logDirectory, 'exchange.log');
+const logs = path.join(logDirectory, 'app.log');
 
 // set the logging level
 let logLevel = process.env.LOG_LEVEL || 'info';
