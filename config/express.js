@@ -1,6 +1,7 @@
 /*
  This file configures the express app.
  - Adds the body-parser middlewares
+ - Adds the morgan requests logger
  - Binds the API routes
 */
 
@@ -17,6 +18,9 @@ module.exports = function(app) {
     extended: true
   }));
   app.use(bodyParser.json());
+
+  // add morgan requests logger middleware
+  require('./morgan')(app);
 
   // Bind API routes
   require('./routes')(app);
