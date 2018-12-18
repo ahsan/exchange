@@ -1,0 +1,1 @@
+Convert currencies based on rates published daily by the European Central Bank

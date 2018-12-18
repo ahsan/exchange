@@ -1,0 +1,33 @@
+{
+  "name": "exchange",
+  "version": "1.0.0",
+  "description": "Convert currencies based on rates published daily by the European Central Bank",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahsan/exchange.git"
+  },
+  "author": "Abdullah Ahsan (ahsan.abdulah@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahsan/exchange/issues"
+  },
+  "homepage": "https://github.com/ahsan/exchange#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
