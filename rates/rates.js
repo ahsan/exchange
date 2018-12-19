@@ -6,6 +6,7 @@ const https = require('https');
 const constants = require('../config/constants');
 const winston = require('../config/winston');
 const xml2js = require('xml2js');
+const cron = require('node-cron');
 
 let eurRateDict = {};
 let parser = new xml2js.Parser();
@@ -37,7 +38,7 @@ module.exports.loadRates = () => {
           const value = parseFloat(rate['$']['rate']);
           eurRateDict[currency] = value;
         }
-        winston.info('Application is now ready.');
+        winston.info('Application is now ready with updated rates.');
       });
     });
   }).on('error', (err) => {
@@ -52,3 +53,9 @@ module.exports.getRate = (currency) => {
     return eurRateDict[currency];
   }
 }
+
+// start a cron job to update the currency exchange rates everyday at 16:00 CET
+cron.schedule(process.env.RATE_UPDATE_CRON, () => {
+  winston.info(`Updating the exchange rates.`);
+  module.exports.loadRates();
+});

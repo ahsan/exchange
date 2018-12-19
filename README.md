@@ -9,7 +9,7 @@ Exchange is a simple API that can be used to convert currencies based on the rat
 
 1. [Install Docker](https://docs.docker.com/install/).
 2. Install `docker-compose`. If you're on Mac or Windows, `docker-compose` comes bundled with `Docker` and you dont have to do anything else. If you're on Linux, visit the [official docs](https://docs.docker.com/compose/install/) for installation steps.
-3. Populate the `.env` file with your choice of values. It comes with defaults that work out of the box. The `LOG_LEVEL` field accepts valid Winston log levels (silly, debug, verbose, info, warn and error).
+3. Populate the `.env` file with your choice of values. It comes with defaults that work out of the box. The `LOG_LEVEL` field accepts valid Winston log levels (silly, debug, verbose, info, warn and error). `RATE_UPDATE_CRON` takes a cron tab for the periodic updation of the currency rates. The default value of `1 16 * * *` queries the ECB API everyday at 4:01 PM (ECB publishes new rates everyday at 4:00 PM).
 4. Run the application using `docker-compose`
 ```
 docker-compose up --build
