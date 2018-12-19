@@ -5,8 +5,8 @@
 let mongoose = require('mongoose');
 let winston = require('./winston');
 
-const db_url = `${process.env.DB_URL}/exchange`
-mongoose.connect(db_url);
+const dbUrl = `${process.env.DB_URL}/exchange`
+mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
 
@@ -16,5 +16,5 @@ db.on('error', (err) => {
 });
 
 db.on('open', () => {
-  winston.info('Connected to MongoDB.');
+  winston.info(`Connected to MongoDB on ${dbUrl}`);
 });
