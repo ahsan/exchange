@@ -21,7 +21,7 @@ module.exports.loadRates = () => {
 
     // Response completed.
     response.on('end', () => {
-      winston.info('Loaded reference rates (xml): ' + xml);
+      winston.info('Loaded reference rates (xml).');
 
       parser.parseString(xml, (err, parsed) => {
         if (err) {
@@ -46,5 +46,9 @@ module.exports.loadRates = () => {
 }
 
 module.exports.getRate = (currency) => {
-  return eurRateDict;
+  if (currency === 'EUR') {
+    return 1;
+  } else {
+    return eurRateDict[currency];
+  }
 }

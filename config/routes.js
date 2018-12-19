@@ -18,6 +18,9 @@ module.exports = function (app) {
 
         // ping endpoint
         app.use(`/${version}/ping`, require(`../api/${version}/ping/ping.routes`));
+
+        // exchange endpoint
+        app.use(`/${version}/exchange`, require(`../api/${version}/exchange/exchange.routes`));
     }
 
     // default route
