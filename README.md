@@ -5,6 +5,22 @@
 
 Exchange is a simple API that can be used to convert currencies based on the rates published daily by the European Central Bank.
 
+# Getting Started
+
+1. [Install Docker](https://docs.docker.com/install/).
+2. Install `docker-compose`. If you're on Mac or Windows, `docker-compose` comes bundled with `Docker` and you dont have to do anything else. If you're on Linux, visit the [official docs](https://docs.docker.com/compose/install/) for installation steps.
+3. Populate the `.env` file with your choice of values. It comes with defaults that work out of the box. The `LOG_LEVEL` field accepts valid Winston log levels (silly, debug, verbose, info, warn and error).
+4. Run the application using `docker-compose`
+```
+docker-compose up --build
+```
+5. The app logs in the *app.log* file should say `App is now ready` when containers are done building and the app is in a running state.
+5. Now the application should be accessible on the localhost with the port from the .env file. Check that the app is running by making GET requests on the endpoints described in the next section.
+5. Stop the application by running
+```
+docker-compose down
+```
+
 # Endpoints
 
 The complete library of endpoints can be found on postman [here](https://www.getpostman.com/collections/aeb591736835b4d38c46).
