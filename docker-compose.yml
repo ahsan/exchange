@@ -12,3 +12,5 @@ services:
     image: "mvertes/alpine-mongo:latest"
     ports:
      - "27017:27017"
+    volumes:
+     - ./db_volume:/data/db
