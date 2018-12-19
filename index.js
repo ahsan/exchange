@@ -11,6 +11,9 @@ const express = require('express');
 // create an express app
 const app = express();
 
+// configure and connect to the DB
+require('./config/mongoose');
+
 // configure and start the HTTP server
 require('./config/server')(app);
 

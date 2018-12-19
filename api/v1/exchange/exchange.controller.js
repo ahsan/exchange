@@ -4,6 +4,7 @@ Defines controllers for the exchange routes.
 
 const getRate = require('../../../rates/rates').getRate;
 const winston = require('../../../config/winston');
+const dbHandler = require('../../../db/handler');
 
 /**
  * GET /exchange
@@ -51,6 +52,13 @@ exports.exchange = function (req, res) {
       rateValue: conversionRatio
     };
     responseCode = 200;
+
+    // asynchronously write the trasaction to DB
+    dbHandler.createTransaction({
+      amount: amount,
+      from: fromCurrency,
+      to: toCurrency
+    });
   }
 
   return res.status(responseCode).json({

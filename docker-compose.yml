@@ -10,3 +10,5 @@ services:
       - "mongodb"
   mongodb:
     image: "mvertes/alpine-mongo:latest"
+    ports:
+     - "27017:27017"

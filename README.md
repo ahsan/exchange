@@ -3,11 +3,11 @@
 </div>
 
 
-Convert currencies based on rates published daily by the European Central Bank
+Exchange is a simple API that can be used to convert currencies based on the rates published daily by the European Central Bank.
 
 # Endpoints
 
-The complete library of endpoints can be on postman [here](https://www.getpostman.com/collections/aeb591736835b4d38c46).
+The complete library of endpoints can be found on postman [here](https://www.getpostman.com/collections/aeb591736835b4d38c46).
 
 ## 1. Healthcheck
 This application has a healthcheck endpoint:
@@ -46,4 +46,21 @@ GET /v1/exchange?amount=100&to=USD&from=EUR
     },
     "time": "Tue Jan 01 2000 12:12:12 GMT+0500 (PKT)"
 }
+```
+
+# Database
+The application logs all of the incoming exchange requests to MongoDB. The collections is named *transactions*.
+
+**Get count of total transactions in the DB**
+```
+mongo
+use exchange
+db.transactions.find().count()
+```
+
+**See all transactions**
+```
+mongo
+use exchange
+db.transactions.find().pretty()
 ```
