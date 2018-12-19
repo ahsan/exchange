@@ -47,7 +47,7 @@ This endpoint can be used to convert an amount from a source currency to a targe
 |---|---|
 |amount|The amout in source currency|
 |from|ISO 4217 Code for the source currency|
-|tp|ISO 4217 Code for the target currency|
+|to|ISO 4217 Code for the target currency|
 
 Example:
 ```
