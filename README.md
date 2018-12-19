@@ -65,9 +65,10 @@ GET /v1/exchange?amount=100&to=USD&from=EUR
 ```
 
 # Database
-The application logs all of the incoming exchange requests to MongoDB. The collections is named *transactions*.
+The application logs all of the incoming exchange requests to MongoDB. The collection is named *transactions*.
 
 **Get count of total transactions in the DB**
+Inside the MongoDB container, run the following command:
 ```
 mongo
 use exchange
