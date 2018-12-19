@@ -7,6 +7,8 @@ Convert currencies based on rates published daily by the European Central Bank
 
 # Endpoints
 
+The complete library of endpoints can be on postman [here](https://www.getpostman.com/collections/aeb591736835b4d38c46).
+
 ## 1. Healthcheck
 This application has a healthcheck endpoint:
 ```
@@ -24,6 +26,7 @@ Example:
 
 ## 2. Exchange
 This endpoint can be used to convert an amount from a source currency to a target currency. There are three query parameters which are all required. The query params are:
+
 |Parameter|Description|
 |---|---|
 |amount|The amout in source currency|
